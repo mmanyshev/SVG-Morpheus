@@ -1,13 +1,7 @@
-/*
- * Useful things from Adobe's Snap.svg adopted to the library needs
- */
 
 'use strict';
 
-
-/*
- * Paths
- */
+var snap = {};
 
 var spaces = "\x09\x0a\x0b\x0c\x0d\x20\xa0\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029";
 var pathCommand = new RegExp("([a-z])[" + spaces + ",]*((-?\\d*\\.?\\d*(?:e[\\-+]?\\d+)?[" + spaces + "]*,?[" + spaces + "]*)+)", "ig");
@@ -347,7 +341,7 @@ var a2c = function(x1, y1, rx, ry, angle, large_arc_flag, sweep_flag, x2, y2, re
   }
 };
 
-var path2curve=function(path, path2) {
+snap.path2curve = function(path, path2) {
   var p = pathToAbsolute(path),
       p2 = path2 && pathToAbsolute(path2),
       attrs = {x: 0, y: 0, bx: 0, by: 0, X: 0, Y: 0, qx: null, qy: null},
@@ -600,7 +594,7 @@ var curvePathBBox=function(path) {
 
 
 var p2s=/,?([a-z]),?/gi;
-var path2string=function(path) {
+snap.path2string=function(path) {
   return path.join(',').replace(p2s, "$1");
 };
 
@@ -704,7 +698,7 @@ var hsl2rgb = function (h, s, l, o) {
 };
 
 // Parses color string as RGB object
-var getRGB = function (colour) {
+snap.getRGB = function (colour) {
   if (!colour || !!((colour = String(colour)).indexOf("-") + 1)) {
     return {r: -1, g: -1, b: -1, opacity: -1, error: 1};
   }
@@ -781,3 +775,5 @@ var getRGB = function (colour) {
   }
   return {r: -1, g: -1, b: -1, opacity: -1, error: 1};
 };
+
+module.exports = snap;

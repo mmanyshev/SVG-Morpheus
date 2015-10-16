@@ -1,3 +1,4 @@
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -8,16 +9,6 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# =========================
-# Operating System Files
-# =========================
-
 # OSX
 # =========================
 
@@ -26,7 +17,7 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -35,10 +26,7 @@ Icon
 .Spotlight-V100
 .Trashes
 
-
-# Installed Bower/Node modules
+.idea/
+gh-pages/
 bower_components/
 node_modules/
-
-# GitHub pages
-gh-pages/
