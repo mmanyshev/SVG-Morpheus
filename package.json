@@ -13,6 +13,7 @@
   },
   "private": true,
   "license": "MIT",
+  "main": "./src/svg-morpheus.js",
   "dependencies": {
     "lodash": "^3.10.1"
   }
