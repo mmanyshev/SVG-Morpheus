@@ -562,7 +562,7 @@ var curveDim=function(x0, y0, x1, y1, x2, y2, x3, y3) {
   };
 };
 
-var curvePathBBox=function(path) {
+snap.curvePathBBox=function(path) {
   var x = 0,
       y = 0,
       X = [],
