@@ -3,9 +3,12 @@
 
 var snap = require('./snapsvglite');
 
+var _cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame || window.oCancelAnimationFrame;
+var _requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame
+
 var helpers = {
-  _cancelAnimationFrame: window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame || window.oCancelAnimationFrame,
-  _requestAnimationFrame: window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.oRequestAnimationFrame
+  _cancelAnimationFrame: _cancelAnimationFrame.bind(window),
+  _requestAnimationFrame: _requestAnimationFrame.bind(window)
 };
 
 // Calculate style
